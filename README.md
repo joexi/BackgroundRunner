@@ -6,7 +6,7 @@ And it can last far more than 10 mins.
 
 #API
 
-three method is all we need
+three methods is all we need
 
 ```Objective-C
 
