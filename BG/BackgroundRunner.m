@@ -52,16 +52,14 @@
 
 - (void)run
 {
-    [self hold];
-    /** Finally found that Background task is unnecessary :) */
-//    UIApplication *application = [UIApplication sharedApplication];
-//    __block UIBackgroundTaskIdentifier background_task;
-//    //Create a task object
-//    background_task = [application beginBackgroundTaskWithExpirationHandler: ^ {
-//        [self hold];
-//        [application endBackgroundTask: background_task];
-//        background_task = UIBackgroundTaskInvalid;
-//    }];
+    UIApplication *application = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier background_task;
+    //Create a task object
+    background_task = [application beginBackgroundTaskWithExpirationHandler: ^ {
+        [self hold];
+        [application endBackgroundTask: background_task];
+        background_task = UIBackgroundTaskInvalid;
+    }];
    
 }
 @end
